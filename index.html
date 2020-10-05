@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script type="text/javascript" src="js/web-helper-client.js"></script>
+<meta name="viewport"
+	content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<meta charset="utf-8" />
+<meta name="description" content="HeartRateMonitor" />
+<title>Heart Rate Monitor</title>
+<link rel="stylesheet" href="lib/tau/wearable/theme/default/tau.css" />
+<link rel="stylesheet" media="all and (-tizen-geometric-shape: circle)"
+	href="lib/tau/wearable/theme/default/tau.circle.min.css">
+<link rel="stylesheet" type="text/css" href="./css/style.css" />
+</head>
+<body>
+	<div class="ui-page ui-page-active" id="main">
+		<div class="ui-header">
+			<h2 class="ui-title">실시간 심장박동수</h2>
+		</div>
+		<div class="ui-content">
+			<div id="heart-rate-value"></div>
+			<div id="heart">
+				<div id="heart-img"></div>
+			</div>
+			<div id="measuring-info">측정중...</div>
+		</div>
+		<footer class="ui-footer ui-bottom-button">
+			<a href="#settings-popup" data-rel="popup" class="ui-btn">설정</a>
+		</footer>
+
+
+		<div id="settings-popup" class="ui-popup">
+			<div class="ui-popup-content">
+				<input id="input-email" name="input Email" type="text" value="Enter Email" />
+				<input id="input-ngrok" name="input ngrok" type="text" value="Enter ngrok" /> 
+				<input id="input-age" name="input age" type="text" value="Enter age" />
+				<div>
+					<button id="email-btn">개인정보 적용</button>
+					<a id="cancel-popup-btn" href="#" class="ui-btn btn-icon-cancel"
+						data-rel="back">취소</a> <a id="ok-popup-btn" href="#"
+						class="ui-btn btn-icon-check" data-rel="back">적용</a>
+				</div>
+			</div>
+		</div>
+
+
+		<div class="ui-page" id="info">
+			<div class="ui-header">
+				<h2 class="ui-title">측정 실패</h2>
+			</div>
+			<div class="ui-content">
+				<div class="info-text">기어를 더 밀착하여 착용하십시오.</div>
+			</div>
+			<footer class="ui-footer ui-bottom-button">
+				<a id="info-back-btn" class="ui-btn">확인</a>
+			</footer>
+		</div>
+
+		<script src="./lib/tau/wearable/js/tau.js"></script>
+		<script src="./js/core/core.js" data-main="./js/app.js"></script>
+		<script src="./js/JQuery/jquery-3.5.1.min.js"></script>
+		<!--<script src="http://code.jquery.com/jquery.min.js"></script>-->
+</body>
+</html>
